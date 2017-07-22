@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Onemark</title>
+	<style>
+		body {
+			font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+			font-size: 100%;
+			margin: auto;
+			min-width: 160px;
+			min-height: 90px;
+			width: 100%;
+			height: 100%;
+		}
+		
+		.page-title {
+			padding: 0 0 4px 0;
+			background-color: lightblue;
+		}
+		
+		.menu {
+			padding: 0;
+			margin: 0;
+			padding: 8px 8px;
+		}
+		
+		.menu li {
+			list-style: none;
+			padding: 6px 0 8px 0;
+			border: 1px solid lightgray;
+			border-left: 0;
+			border-right: 0;
+			border-top: 0;
+		}
+		
+		.menu li:last-child {
+			border-bottom: 0;
+		}
+		
+		.menu li:hover {
+			background-color: lightgray;
+		}
+		
+		.menu li img {
+			vertical-align: middle;
+		}
+		
+		#status {
+			/* avoid an excessively wide status text */
+			white-space: pre-wrap;
+			text-overflow: ellipsis;
+			overflow: hidden;
+			padding: 6px;
+			margin: 6px 0 0 0;
+			background: lightyellow;
+			max-height: 40px;
+		}
+		
+		.action {
+			position: relative;
+			width: 5px;
+			padding: 0;
+			vertical-align: middle;
+			float: right;
+			z-index: 1;
+		}
+
+		.action .success {
+			background: green;
+		}
+		
+		.action .error {
+			background: red;
+		}
+		
+		.action .warn {
+			background: yellow;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="page-title" hidden>OneMark</div>
+
+	<ul class="menu">
+		<li class="mark-tab"><img src="icon.png" width="16" height="16" /> Onemark this!
+			<div class="action"><span>&nbsp;</span></div>
+		</li>
+		<li class="mark-all-tabs"><img src="dup.png" width="16" height="16" /> Onemark all!
+			<div class="action"><span>&nbsp;</span></div>
+		</li>
+	</ul>
+
+	<div style="overflow: visible; white-space: nowrap;" hidden aria-hidden>
+		<button id="current-button">Current</button>
+		<button id="all-button">All Urls</button>
+	</div>
+	<div id="status" hidden></div>
+
+	<script src="settings.js"></script>
+	<script src="index.js"></script>
+</body>
+
+</html>
